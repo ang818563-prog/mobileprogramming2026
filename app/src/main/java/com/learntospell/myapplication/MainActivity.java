@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         int nilai = skorBenar * 100 / JUMLAH_SOAL;
         new AlertDialog.Builder(this)
                 .setTitle("Sesi Selesai")
-                .setMessage("Level: "+ kodeLevel()+ "nilai: " + nilai)
+                .setMessage("Level: "+ kodeLevel()+ " nilai: " + nilai)
                 .setPositiveButton("Mau main lagi?", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateSkor() {
-        textSkor.setText("soal no: " + (soalKe+1) +"Benar: " + skorBenar + "  Salah: " + skorSalah);
+        textSkor.setText("soal no: " + (soalKe+1) +" Benar: " + skorBenar + "  Salah: " + skorSalah);
     }
 
     private void mulaiTimer(long durasi) {
