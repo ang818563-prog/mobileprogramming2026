@@ -2,6 +2,7 @@ package com.learntospell.myapplication;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     private HashMap<String, String> kamusEasy, kamusMedium, kamusDifficult, kamus;
     private ArrayList<String> kataEasy, kataMedium, kataDifficult, kata;
-    int JUMLAH_OPSI=5, JUMLAH_SOAL=10, soalKe=0;
+    int JUMLAH_OPSI=5, JUMLAH_SOAL=3, soalKe=0;
     private RecyclerView rvOpsi;
     private OpsiAdapter adapter;
     private TextView textHasil;
@@ -140,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
         int id = radioGroupLevel.getCheckedRadioButtonId();
         if (id == R.id.radioEasy)return "Easy";
         if (id == R.id.radioMedium)return "Medium";
-        return "Hard";
+        return "difikult";
     }
 
     private void mulaiSesiBaru(){
@@ -211,7 +212,15 @@ public class MainActivity extends AppCompatActivity {
     private void selesaiSesi(){
         hentikanTimer();
         sudahDijawab = true;
-        tampilkanRingkasan();
+        Intent intent = new Intent(this, RingkasanHasil.class);
+        intent.putExtra("JUMLAH_BENAR", skorBenar);
+        intent.putExtra("JUMLAH_SALAH", skorSalah);
+        intent.putExtra("JUMLAH_SOAL", JUMLAH_SOAL);
+        intent.putExtra("LEVEL", kodeLevel());
+        startActivity(intent);
+
+       //mulaiSesiBaru();
+        //tampilkanRingkasan();
     }
 
     private void periksaJawaban(int position) {
