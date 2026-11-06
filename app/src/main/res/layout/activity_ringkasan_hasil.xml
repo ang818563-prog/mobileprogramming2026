@@ -30,12 +30,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <ListView
+        android:id="@+id/listsalah"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/ringkasan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <Button
         android:id="@+id/btnmainlagi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="main lagi"
-        app:layout_constraintTop_toBottomOf="@+id/ringkasan"
+        app:layout_constraintTop_toBottomOf="@+id/listsalah"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
